@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
     rl.on('line', (line: string) => {
         console.log('[Next.js]', line);
 
-        const match = line.match(/url:\s*(http:\/\/localhost:\d+)/i);
+        const match = line.match(/(?:url|Local):\s*(http:\/\/localhost:\d+)/i);
         if (match && !opened) {
             opened = true;
             const url = match[1];
